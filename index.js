@@ -3,8 +3,9 @@ const fs = require("fs")
 const Intern = require("./lib/Intern")
 const Manager = require("./lib/Manager.js")
 const Engineer = require("./lib/Engineer.js")
-const renderHTML = require("./src/renderHTML")
+// const renderHTML = require("./src/employeeIndex.html")
 const allEmployees = []
+generateEmployee()
 
 function generateEmployee() {
     inquirer
@@ -130,8 +131,9 @@ function generateManager() {
 }
 function makeHTML() {
 
-    fs.writeFile('generate-index.html', renderHTML(allEmployees), (err) =>
-        err ? console.log(err)
-    );
-}
-generateEmployee()
+fs.writeFile('employeeIndex.html',renderHTML(allEmployees), err => {
+    if (err) {
+      console.error(err);
+    }
+
+})}
