@@ -33,13 +33,11 @@ function generateEmployee() {
                 console.log(answers)
                 generateEngineer()
 
-            } else {
-                console.log("hello")
-                makeHTML();
-            }
+            } 
         });
 }
 // Engineer questions 
+
 function generateEngineer() {
     inquirer.prompt([
         {
@@ -129,11 +127,11 @@ function generateManager() {
         generateEmployee()
     })
 }
-function makeHTML() {
+// function makeHTML() {
 
-fs.writeFile('employeeIndex.html',renderHTML(allEmployees), err => {
-    if (err) {
-      console.error(err);
-    }
+// fs.writeFile('employeeIndex.html',renderHTML(allEmployees), err => {
+//     if (err) {
+//       console.error(err);
+//     }
 
-})}
+// })}
