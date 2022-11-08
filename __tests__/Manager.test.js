@@ -17,8 +17,8 @@ describe('Manager', () => {
 
 
         expect(newManager.getName()).toEqual("MarcoManager");
-        expect(newManager.getId()).toEqual("2");
-        expect(newManager.getEmail()).toEqual("MarcoManager@gmailcom");
+        expect(newManager.getId()).toEqual(2);
+        expect(newManager.getEmail()).toEqual("MarcoManager@gmail.com");
         expect(newManager.getOfficeNumber()).toEqual(201);
         
         });

@@ -2,7 +2,7 @@ const Employee = require("../lib/Employee")
 
 
 
-descrirbe('Employee',() =>{
+describe('Employee',() =>{
 
 
     describe('initialization', () => {
@@ -21,7 +21,7 @@ descrirbe('Employee',() =>{
         let newEmployee = new Employee("marco" , 1, "marco@gmail.com");
 
 
-        expect(newEmployee.getName).toEqual("marco");
+        expect(newEmployee.getName()).toEqual("marco");
         });
     });
 
