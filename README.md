@@ -1,6 +1,6 @@
 # undefined
 # [repoName](#repoName)
-Employee Info
+Employee Info boiler plate for any company.
 ## Table of Contents  
 * [description](#description)  
 * [installation](#installation) 
@@ -28,3 +28,4 @@ open terminal in __test__ and npm test will refelct all tests compelted.
     https://marcoferreira07.github.io/EmployeeInfo/
 ## Email
     marcoasf.com@gmail.com
+Walkthough video https://drive.google.com/file/d/1MLvMlVUooDcqBbp9kpmCQTtIFB4GeGp_/view
