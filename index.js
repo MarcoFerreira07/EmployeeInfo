@@ -7,39 +7,41 @@ const Engineer = require("./lib/Engineer.js")
 const allEmployees = []
 generateEmployee()
 
-function generateEmployee() {
+async function generateEmployee() {
     inquirer
         .prompt([
             {
-                //here this question will allow the user to open from a different sets of questions
-                //based on job title
+                //job titles
                 type: 'list',
-                name: 'employee role',
+                name: 'role',
                 message: 'Your role?',
-                choices: ["Manager", "Engineer", "Intern"]
+                choices: ["Manager", "Engineer", "Intern","Quit"]
             },
         ])
-        .then((answers) => {
+        .then(async(answers) =>  {
             if (answers.role === "Manager") {
                 console.log(answers)
-                generateManager()
+               await generateManager()
 
 
             } else if (answers.role === "Intern") {
                 console.log(answers)
-                generateIntern()
+               await generateIntern()
 
             } else if (answers.role === "Engineer") {
                 console.log(answers)
-                generateEngineer()
+              await  generateEngineer()
 
-            } 
+
+            } else {
+                makeHTML()
+            }
         });
 }
 // Engineer questions 
 
 function generateEngineer() {
-    inquirer.prompt([
+    return   inquirer.prompt([
         {
             type: 'input',
             name: 'name',
@@ -69,7 +71,7 @@ function generateEngineer() {
 }
 //intern
 function generateIntern() {
-    inquirer.prompt([
+    return   inquirer.prompt([
         {
             type: 'input',
             name: 'name',
@@ -99,7 +101,7 @@ function generateIntern() {
 }
 // manager
 function generateManager() {
-    inquirer.prompt([
+  return  inquirer.prompt([
         {
             type: 'input',
             name: 'name',
@@ -127,11 +129,11 @@ function generateManager() {
         generateEmployee()
     })
 }
-// function makeHTML() {
+function makeHTML() {
 
-// fs.writeFile('employeeIndex.html',renderHTML(allEmployees), err => {
-//     if (err) {
-//       console.error(err);
-//     }
+fs.writeFile('employeeIndex.html',renderHTML(allEmployees), err => {
+    if (err) {
+      console.error(err);
+    }
 
-// })}
+})}
